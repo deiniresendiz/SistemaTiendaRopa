@@ -1,0 +1,16 @@
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\bin\Debug\SistemaVenta.exe.config
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\bin\Debug\SistemaVenta.exe
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\bin\Debug\SistemaVenta.pdb
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\bin\Debug\SistemaVenta.xml
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.frmClientes.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.frmEmpleados.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.frmMain.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.frmProductos.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.frmProveedores.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.Resources.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.vbproj.GenerateResource.Cache
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.vbproj.CoreCompileInputs.cache
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.exe
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.xml
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.pdb
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SystemaVenta\SistemaVenta\obj\Debug\SistemaVenta.vbprojResolveAssemblyReference.cache
