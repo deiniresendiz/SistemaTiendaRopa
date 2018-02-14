@@ -22,20 +22,20 @@ Partial Class frmProveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.textTelefono = New System.Windows.Forms.TextBox()
+        Me.textCp = New System.Windows.Forms.TextBox()
+        Me.textColonia = New System.Windows.Forms.TextBox()
+        Me.textDomicilio = New System.Windows.Forms.TextBox()
+        Me.textRfc = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.textIdProveedor = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -43,40 +43,40 @@ Partial Class frmProveedores
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox7
+        'textTelefono
         '
-        Me.TextBox7.Location = New System.Drawing.Point(475, 104)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(255, 20)
-        Me.TextBox7.TabIndex = 35
+        Me.textTelefono.Location = New System.Drawing.Point(475, 104)
+        Me.textTelefono.Name = "textTelefono"
+        Me.textTelefono.Size = New System.Drawing.Size(255, 20)
+        Me.textTelefono.TabIndex = 35
         '
-        'TextBox6
+        'textCp
         '
-        Me.TextBox6.Location = New System.Drawing.Point(475, 73)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 34
+        Me.textCp.Location = New System.Drawing.Point(475, 73)
+        Me.textCp.Name = "textCp"
+        Me.textCp.Size = New System.Drawing.Size(100, 20)
+        Me.textCp.TabIndex = 34
         '
-        'TextBox5
+        'textColonia
         '
-        Me.TextBox5.Location = New System.Drawing.Point(475, 43)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(255, 20)
-        Me.TextBox5.TabIndex = 33
+        Me.textColonia.Location = New System.Drawing.Point(475, 43)
+        Me.textColonia.Name = "textColonia"
+        Me.textColonia.Size = New System.Drawing.Size(255, 20)
+        Me.textColonia.TabIndex = 33
         '
-        'TextBox4
+        'textDomicilio
         '
-        Me.TextBox4.Location = New System.Drawing.Point(120, 102)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(255, 20)
-        Me.TextBox4.TabIndex = 32
+        Me.textDomicilio.Location = New System.Drawing.Point(120, 102)
+        Me.textDomicilio.Name = "textDomicilio"
+        Me.textDomicilio.Size = New System.Drawing.Size(255, 20)
+        Me.textDomicilio.TabIndex = 32
         '
-        'TextBox3
+        'textRfc
         '
-        Me.TextBox3.Location = New System.Drawing.Point(120, 73)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(255, 20)
-        Me.TextBox3.TabIndex = 31
+        Me.textRfc.Location = New System.Drawing.Point(120, 73)
+        Me.textRfc.Name = "textRfc"
+        Me.textRfc.Size = New System.Drawing.Size(255, 20)
+        Me.textRfc.TabIndex = 31
         '
         'Label7
         '
@@ -108,12 +108,12 @@ Partial Class frmProveedores
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "Telefono:"
         '
-        'TextBox2
+        'textNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(120, 42)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(255, 20)
-        Me.TextBox2.TabIndex = 27
+        Me.textNombre.Location = New System.Drawing.Point(120, 42)
+        Me.textNombre.Name = "textNombre"
+        Me.textNombre.Size = New System.Drawing.Size(255, 20)
+        Me.textNombre.TabIndex = 27
         '
         'Label4
         '
@@ -155,13 +155,13 @@ Partial Class frmProveedores
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "IdProveedor:"
         '
-        'TextBox1
+        'textIdProveedor
         '
-        Me.TextBox1.Location = New System.Drawing.Point(120, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 22
+        Me.textIdProveedor.Location = New System.Drawing.Point(120, 16)
+        Me.textIdProveedor.Name = "textIdProveedor"
+        Me.textIdProveedor.ReadOnly = True
+        Me.textIdProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.textIdProveedor.TabIndex = 22
         '
         'btnGuardar
         '
@@ -205,21 +205,21 @@ Partial Class frmProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(732, 484)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
+        Me.ClientSize = New System.Drawing.Size(743, 484)
+        Me.Controls.Add(Me.textTelefono)
+        Me.Controls.Add(Me.textCp)
+        Me.Controls.Add(Me.textColonia)
+        Me.Controls.Add(Me.textDomicilio)
+        Me.Controls.Add(Me.textRfc)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.textNombre)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.textIdProveedor)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnNuevo)
@@ -232,20 +232,20 @@ Partial Class frmProveedores
 
     End Sub
 
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents textTelefono As TextBox
+    Friend WithEvents textCp As TextBox
+    Friend WithEvents textColonia As TextBox
+    Friend WithEvents textDomicilio As TextBox
+    Friend WithEvents textRfc As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents textNombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents textIdProveedor As TextBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
