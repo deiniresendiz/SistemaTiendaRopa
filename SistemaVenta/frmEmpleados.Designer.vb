@@ -53,11 +53,12 @@ Partial Class frmEmpleados
         Me.textTelefono = New System.Windows.Forms.TextBox()
         Me.EmpleadosTableAdapter = New SistemaVenta.TiendaRopaDataSetTableAdapters.EmpleadosTableAdapter()
         Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.btnModificar = New System.Windows.Forms.Button()
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TiendaRopaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,8 +149,9 @@ Partial Class frmEmpleados
         '
         'btnGuardar
         '
+        Me.btnGuardar.Enabled = False
         Me.btnGuardar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(315, 428)
+        Me.btnGuardar.Location = New System.Drawing.Point(421, 428)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(127, 38)
         Me.btnGuardar.TabIndex = 3
@@ -158,6 +160,7 @@ Partial Class frmEmpleados
         '
         'textIdEmpleado
         '
+        Me.textIdEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "IdEmpleado", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"))
         Me.textIdEmpleado.Location = New System.Drawing.Point(123, 13)
         Me.textIdEmpleado.Name = "textIdEmpleado"
         Me.textIdEmpleado.ReadOnly = True
@@ -206,6 +209,8 @@ Partial Class frmEmpleados
         '
         'textNombre
         '
+        Me.textNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Nombre", True))
+        Me.textNombre.Enabled = False
         Me.textNombre.Location = New System.Drawing.Point(123, 39)
         Me.textNombre.Name = "textNombre"
         Me.textNombre.Size = New System.Drawing.Size(255, 20)
@@ -243,6 +248,8 @@ Partial Class frmEmpleados
         '
         'textPuesto
         '
+        Me.textPuesto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Puesto", True))
+        Me.textPuesto.Enabled = False
         Me.textPuesto.Location = New System.Drawing.Point(123, 70)
         Me.textPuesto.Name = "textPuesto"
         Me.textPuesto.Size = New System.Drawing.Size(255, 20)
@@ -250,6 +257,8 @@ Partial Class frmEmpleados
         '
         'textDomicilio
         '
+        Me.textDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Domicilio", True))
+        Me.textDomicilio.Enabled = False
         Me.textDomicilio.Location = New System.Drawing.Point(123, 99)
         Me.textDomicilio.Name = "textDomicilio"
         Me.textDomicilio.Size = New System.Drawing.Size(255, 20)
@@ -257,6 +266,8 @@ Partial Class frmEmpleados
         '
         'textColonia
         '
+        Me.textColonia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Colonia", True))
+        Me.textColonia.Enabled = False
         Me.textColonia.Location = New System.Drawing.Point(478, 40)
         Me.textColonia.Name = "textColonia"
         Me.textColonia.Size = New System.Drawing.Size(255, 20)
@@ -264,6 +275,8 @@ Partial Class frmEmpleados
         '
         'TextCp
         '
+        Me.TextCp.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Cp", True))
+        Me.TextCp.Enabled = False
         Me.TextCp.Location = New System.Drawing.Point(478, 70)
         Me.TextCp.Name = "TextCp"
         Me.TextCp.Size = New System.Drawing.Size(100, 20)
@@ -271,6 +284,8 @@ Partial Class frmEmpleados
         '
         'textTelefono
         '
+        Me.textTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Telefono", True))
+        Me.textTelefono.Enabled = False
         Me.textTelefono.Location = New System.Drawing.Point(478, 101)
         Me.textTelefono.Name = "textTelefono"
         Me.textTelefono.Size = New System.Drawing.Size(255, 20)
@@ -284,6 +299,11 @@ Partial Class frmEmpleados
         '
         Me.SqlSelectCommand1.CommandText = "SELECT        Empleados.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Empleados"
         Me.SqlSelectCommand1.Connection = Me.SqlConnection1
+        '
+        'SqlConnection1
+        '
+        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
+        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
         '
@@ -311,16 +331,22 @@ Partial Class frmEmpleados
         Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Empleados", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("IdEmpleado", "IdEmpleado"), New System.Data.Common.DataColumnMapping("Nombre", "Nombre"), New System.Data.Common.DataColumnMapping("Puesto", "Puesto"), New System.Data.Common.DataColumnMapping("Domicilio", "Domicilio"), New System.Data.Common.DataColumnMapping("Colonia", "Colonia"), New System.Data.Common.DataColumnMapping("Cp", "Cp"), New System.Data.Common.DataColumnMapping("Telefono", "Telefono")})})
         Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
         '
-        'SqlConnection1
+        'btnModificar
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
-        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
+        Me.btnModificar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(237, 428)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(127, 38)
+        Me.btnModificar.TabIndex = 51
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(750, 478)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.textTelefono)
         Me.Controls.Add(Me.TextCp)
         Me.Controls.Add(Me.textColonia)
@@ -383,4 +409,5 @@ Partial Class frmEmpleados
     Friend WithEvents SqlUpdateCommand1 As SqlClient.SqlCommand
     Friend WithEvents SqlDeleteCommand1 As SqlClient.SqlCommand
     Friend WithEvents SqlDataAdapter1 As SqlClient.SqlDataAdapter
+    Friend WithEvents btnModificar As Button
 End Class
