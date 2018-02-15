@@ -25,6 +25,8 @@ Partial Class frmCategorias
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCategorias))
         Me.textDescripcion = New System.Windows.Forms.TextBox()
+        Me.CategoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiendaRopaDataSet = New SistemaVenta.TiendaRopaDataSet()
         Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,21 +36,20 @@ Partial Class frmCategorias
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.dgDatos = New System.Windows.Forms.DataGridView()
+        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
         Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
-        Me.TiendaRopaDataSet = New SistemaVenta.TiendaRopaDataSet()
-        Me.CategoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CategoriasTableAdapter = New SistemaVenta.TiendaRopaDataSetTableAdapters.CategoriasTableAdapter()
-        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnModificar = New System.Windows.Forms.Button()
         CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textDescripcion
@@ -59,6 +60,16 @@ Partial Class frmCategorias
         Me.textDescripcion.Name = "textDescripcion"
         Me.textDescripcion.Size = New System.Drawing.Size(446, 79)
         Me.textDescripcion.TabIndex = 49
+        '
+        'CategoriasBindingSource
+        '
+        Me.CategoriasBindingSource.DataMember = "Categorias"
+        Me.CategoriasBindingSource.DataSource = Me.TiendaRopaDataSet
+        '
+        'TiendaRopaDataSet
+        '
+        Me.TiendaRopaDataSet.DataSetName = "TiendaRopaDataSet"
+        Me.TiendaRopaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'textNombre
         '
@@ -100,6 +111,7 @@ Partial Class frmCategorias
         '
         'textIdCategoria
         '
+        Me.textIdCategoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "IdCategoria", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"))
         Me.textIdCategoria.Location = New System.Drawing.Point(128, 21)
         Me.textIdCategoria.Name = "textIdCategoria"
         Me.textIdCategoria.ReadOnly = True
@@ -109,7 +121,7 @@ Partial Class frmCategorias
         'btnGuardar
         '
         Me.btnGuardar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(233, 396)
+        Me.btnGuardar.Location = New System.Drawing.Point(314, 396)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(127, 38)
         Me.btnGuardar.TabIndex = 39
@@ -147,10 +159,33 @@ Partial Class frmCategorias
         Me.dgDatos.Size = New System.Drawing.Size(557, 221)
         Me.dgDatos.TabIndex = 36
         '
+        'IdCategoriaDataGridViewTextBoxColumn
+        '
+        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
         'SqlSelectCommand1
         '
         Me.SqlSelectCommand1.CommandText = "SELECT        Categorias.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Categorias"
         Me.SqlSelectCommand1.Connection = Me.SqlConnection1
+        '
+        'SqlConnection1
+        '
+        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
+        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'SqlInsertCommand1
         '
@@ -178,48 +213,26 @@ Partial Class frmCategorias
         Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Categorias", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("IdCategoria", "IdCategoria"), New System.Data.Common.DataColumnMapping("Nombre", "Nombre"), New System.Data.Common.DataColumnMapping("Descripcion", "Descripcion")})})
         Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
         '
-        'SqlConnection1
-        '
-        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
-        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
-        '
-        'TiendaRopaDataSet
-        '
-        Me.TiendaRopaDataSet.DataSetName = "TiendaRopaDataSet"
-        Me.TiendaRopaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CategoriasBindingSource
-        '
-        Me.CategoriasBindingSource.DataMember = "Categorias"
-        Me.CategoriasBindingSource.DataSource = Me.TiendaRopaDataSet
-        '
         'CategoriasTableAdapter
         '
         Me.CategoriasTableAdapter.ClearBeforeFill = True
         '
-        'IdCategoriaDataGridViewTextBoxColumn
+        'btnModificar
         '
-        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.btnModificar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(169, 396)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(127, 38)
+        Me.btnModificar.TabIndex = 50
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'frmCategorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(589, 446)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.textDescripcion)
         Me.Controls.Add(Me.textNombre)
         Me.Controls.Add(Me.Label4)
@@ -232,9 +245,9 @@ Partial Class frmCategorias
         Me.Controls.Add(Me.dgDatos)
         Me.Name = "frmCategorias"
         Me.Text = "Categorias"
-        CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -262,4 +275,5 @@ Partial Class frmCategorias
     Friend WithEvents IdCategoriaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnModificar As Button
 End Class
