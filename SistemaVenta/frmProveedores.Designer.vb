@@ -22,7 +22,11 @@ Partial Class frmProveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProveedores))
         Me.textTelefono = New System.Windows.Forms.TextBox()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiendaRopaDataSet = New SistemaVenta.TiendaRopaDataSet()
         Me.textCp = New System.Windows.Forms.TextBox()
         Me.textColonia = New System.Windows.Forms.TextBox()
         Me.textDomicilio = New System.Windows.Forms.TextBox()
@@ -40,18 +44,47 @@ Partial Class frmProveedores
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RFCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DomicilioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColoniaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CpDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
+        Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
+        Me.ProveedoresTableAdapter = New SistemaVenta.TiendaRopaDataSetTableAdapters.ProveedoresTableAdapter()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textTelefono
         '
+        Me.textTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Telefono", True))
         Me.textTelefono.Location = New System.Drawing.Point(475, 104)
         Me.textTelefono.Name = "textTelefono"
         Me.textTelefono.Size = New System.Drawing.Size(255, 20)
         Me.textTelefono.TabIndex = 35
         '
+        'ProveedoresBindingSource
+        '
+        Me.ProveedoresBindingSource.DataMember = "Proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.TiendaRopaDataSet
+        '
+        'TiendaRopaDataSet
+        '
+        Me.TiendaRopaDataSet.DataSetName = "TiendaRopaDataSet"
+        Me.TiendaRopaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'textCp
         '
+        Me.textCp.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Cp", True))
         Me.textCp.Location = New System.Drawing.Point(475, 73)
         Me.textCp.Name = "textCp"
         Me.textCp.Size = New System.Drawing.Size(100, 20)
@@ -59,6 +92,7 @@ Partial Class frmProveedores
         '
         'textColonia
         '
+        Me.textColonia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Colonia", True))
         Me.textColonia.Location = New System.Drawing.Point(475, 43)
         Me.textColonia.Name = "textColonia"
         Me.textColonia.Size = New System.Drawing.Size(255, 20)
@@ -66,6 +100,7 @@ Partial Class frmProveedores
         '
         'textDomicilio
         '
+        Me.textDomicilio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Domicilio", True))
         Me.textDomicilio.Location = New System.Drawing.Point(120, 102)
         Me.textDomicilio.Name = "textDomicilio"
         Me.textDomicilio.Size = New System.Drawing.Size(255, 20)
@@ -73,6 +108,7 @@ Partial Class frmProveedores
         '
         'textRfc
         '
+        Me.textRfc.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "RFC", True))
         Me.textRfc.Location = New System.Drawing.Point(120, 73)
         Me.textRfc.Name = "textRfc"
         Me.textRfc.Size = New System.Drawing.Size(255, 20)
@@ -110,6 +146,7 @@ Partial Class frmProveedores
         '
         'textNombre
         '
+        Me.textNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Nombre", True))
         Me.textNombre.Location = New System.Drawing.Point(120, 42)
         Me.textNombre.Name = "textNombre"
         Me.textNombre.Size = New System.Drawing.Size(255, 20)
@@ -157,6 +194,7 @@ Partial Class frmProveedores
         '
         'textIdProveedor
         '
+        Me.textIdProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "IdProveedor", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"))
         Me.textIdProveedor.Location = New System.Drawing.Point(120, 16)
         Me.textIdProveedor.Name = "textIdProveedor"
         Me.textIdProveedor.ReadOnly = True
@@ -166,7 +204,7 @@ Partial Class frmProveedores
         'btnGuardar
         '
         Me.btnGuardar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(312, 431)
+        Me.btnGuardar.Location = New System.Drawing.Point(399, 431)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(127, 38)
         Me.btnGuardar.TabIndex = 21
@@ -195,17 +233,121 @@ Partial Class frmProveedores
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedorDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.RFCDataGridViewTextBoxColumn, Me.DomicilioDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.CpDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProveedoresBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(9, 154)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(720, 267)
         Me.DataGridView1.TabIndex = 18
+        '
+        'IdProveedorDataGridViewTextBoxColumn
+        '
+        Me.IdProveedorDataGridViewTextBoxColumn.DataPropertyName = "IdProveedor"
+        Me.IdProveedorDataGridViewTextBoxColumn.HeaderText = "IdProveedor"
+        Me.IdProveedorDataGridViewTextBoxColumn.Name = "IdProveedorDataGridViewTextBoxColumn"
+        Me.IdProveedorDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RFCDataGridViewTextBoxColumn
+        '
+        Me.RFCDataGridViewTextBoxColumn.DataPropertyName = "RFC"
+        Me.RFCDataGridViewTextBoxColumn.HeaderText = "RFC"
+        Me.RFCDataGridViewTextBoxColumn.Name = "RFCDataGridViewTextBoxColumn"
+        Me.RFCDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DomicilioDataGridViewTextBoxColumn
+        '
+        Me.DomicilioDataGridViewTextBoxColumn.DataPropertyName = "Domicilio"
+        Me.DomicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio"
+        Me.DomicilioDataGridViewTextBoxColumn.Name = "DomicilioDataGridViewTextBoxColumn"
+        Me.DomicilioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ColoniaDataGridViewTextBoxColumn
+        '
+        Me.ColoniaDataGridViewTextBoxColumn.DataPropertyName = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.HeaderText = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.Name = "ColoniaDataGridViewTextBoxColumn"
+        Me.ColoniaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CpDataGridViewTextBoxColumn
+        '
+        Me.CpDataGridViewTextBoxColumn.DataPropertyName = "Cp"
+        Me.CpDataGridViewTextBoxColumn.HeaderText = "Cp"
+        Me.CpDataGridViewTextBoxColumn.Name = "CpDataGridViewTextBoxColumn"
+        Me.CpDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TelefonoDataGridViewTextBoxColumn
+        '
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
+        Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SqlSelectCommand1
+        '
+        Me.SqlSelectCommand1.CommandText = "SELECT        Proveedores.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Proveedores"
+        Me.SqlSelectCommand1.Connection = Me.SqlConnection1
+        '
+        'SqlConnection1
+        '
+        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
+        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
+        '
+        'SqlInsertCommand1
+        '
+        Me.SqlInsertCommand1.CommandText = resources.GetString("SqlInsertCommand1.CommandText")
+        Me.SqlInsertCommand1.Connection = Me.SqlConnection1
+        Me.SqlInsertCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@IdProveedor", System.Data.SqlDbType.Int, 0, "IdProveedor"), New System.Data.SqlClient.SqlParameter("@Nombre", System.Data.SqlDbType.VarChar, 0, "Nombre"), New System.Data.SqlClient.SqlParameter("@RFC", System.Data.SqlDbType.VarChar, 0, "RFC"), New System.Data.SqlClient.SqlParameter("@Domicilio", System.Data.SqlDbType.VarChar, 0, "Domicilio"), New System.Data.SqlClient.SqlParameter("@Colonia", System.Data.SqlDbType.VarChar, 0, "Colonia"), New System.Data.SqlClient.SqlParameter("@Cp", System.Data.SqlDbType.VarChar, 0, "Cp"), New System.Data.SqlClient.SqlParameter("@Telefono", System.Data.SqlDbType.VarChar, 0, "Telefono")})
+        '
+        'SqlUpdateCommand1
+        '
+        Me.SqlUpdateCommand1.CommandText = resources.GetString("SqlUpdateCommand1.CommandText")
+        Me.SqlUpdateCommand1.Connection = Me.SqlConnection1
+        Me.SqlUpdateCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@IdProveedor", System.Data.SqlDbType.Int, 0, "IdProveedor"), New System.Data.SqlClient.SqlParameter("@Nombre", System.Data.SqlDbType.VarChar, 0, "Nombre"), New System.Data.SqlClient.SqlParameter("@RFC", System.Data.SqlDbType.VarChar, 0, "RFC"), New System.Data.SqlClient.SqlParameter("@Domicilio", System.Data.SqlDbType.VarChar, 0, "Domicilio"), New System.Data.SqlClient.SqlParameter("@Colonia", System.Data.SqlDbType.VarChar, 0, "Colonia"), New System.Data.SqlClient.SqlParameter("@Cp", System.Data.SqlDbType.VarChar, 0, "Cp"), New System.Data.SqlClient.SqlParameter("@Telefono", System.Data.SqlDbType.VarChar, 0, "Telefono"), New System.Data.SqlClient.SqlParameter("@Original_IdProveedor", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "IdProveedor", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Nombre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_RFC", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RFC", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_RFC", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "RFC", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Domicilio", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Domicilio", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Domicilio", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Domicilio", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Colonia", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Colonia", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Colonia", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Colonia", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Cp", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Cp", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Cp", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Cp", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Telefono", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Telefono", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Telefono", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Telefono", System.Data.DataRowVersion.Original, Nothing)})
+        '
+        'SqlDeleteCommand1
+        '
+        Me.SqlDeleteCommand1.CommandText = resources.GetString("SqlDeleteCommand1.CommandText")
+        Me.SqlDeleteCommand1.Connection = Me.SqlConnection1
+        Me.SqlDeleteCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@Original_IdProveedor", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "IdProveedor", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Nombre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_RFC", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RFC", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_RFC", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "RFC", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Domicilio", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Domicilio", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Domicilio", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Domicilio", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Colonia", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Colonia", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Colonia", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Colonia", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Cp", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Cp", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Cp", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Cp", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Telefono", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Telefono", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Telefono", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Telefono", System.Data.DataRowVersion.Original, Nothing)})
+        '
+        'SqlDataAdapter1
+        '
+        Me.SqlDataAdapter1.DeleteCommand = Me.SqlDeleteCommand1
+        Me.SqlDataAdapter1.InsertCommand = Me.SqlInsertCommand1
+        Me.SqlDataAdapter1.SelectCommand = Me.SqlSelectCommand1
+        Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Proveedores", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("IdProveedor", "IdProveedor"), New System.Data.Common.DataColumnMapping("Nombre", "Nombre"), New System.Data.Common.DataColumnMapping("RFC", "RFC"), New System.Data.Common.DataColumnMapping("Domicilio", "Domicilio"), New System.Data.Common.DataColumnMapping("Colonia", "Colonia"), New System.Data.Common.DataColumnMapping("Cp", "Cp"), New System.Data.Common.DataColumnMapping("Telefono", "Telefono")})})
+        Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
+        '
+        'ProveedoresTableAdapter
+        '
+        Me.ProveedoresTableAdapter.ClearBeforeFill = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(211, 431)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(127, 38)
+        Me.btnModificar.TabIndex = 51
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'frmProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(743, 484)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.textTelefono)
         Me.Controls.Add(Me.textCp)
         Me.Controls.Add(Me.textColonia)
@@ -226,6 +368,8 @@ Partial Class frmProveedores
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "frmProveedores"
         Me.Text = "Proveedores"
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -250,4 +394,21 @@ Partial Class frmProveedores
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents SqlSelectCommand1 As SqlClient.SqlCommand
+    Friend WithEvents SqlConnection1 As SqlClient.SqlConnection
+    Friend WithEvents SqlInsertCommand1 As SqlClient.SqlCommand
+    Friend WithEvents SqlUpdateCommand1 As SqlClient.SqlCommand
+    Friend WithEvents SqlDeleteCommand1 As SqlClient.SqlCommand
+    Friend WithEvents SqlDataAdapter1 As SqlClient.SqlDataAdapter
+    Friend WithEvents TiendaRopaDataSet As TiendaRopaDataSet
+    Friend WithEvents ProveedoresBindingSource As BindingSource
+    Friend WithEvents ProveedoresTableAdapter As TiendaRopaDataSetTableAdapters.ProveedoresTableAdapter
+    Friend WithEvents IdProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RFCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DomicilioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ColoniaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CpDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnModificar As Button
 End Class
