@@ -117,4 +117,72 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ProductosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>457, 17</value>
+  </metadata>
+  <metadata name="ProductosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>457, 17</value>
+  </metadata>
+  <metadata name="TiendaRopaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 17</value>
+  </metadata>
+  <metadata name="TiendaRopaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 17</value>
+  </metadata>
+  <metadata name="CategoriasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="CategoriasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
+  <metadata name="SqlDataAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlDeleteCommand.CommandText" xml:space="preserve">
+    <value>DELETE FROM [Productos] WHERE (([IdProducto] = @Original_IdProducto) AND ([IdCategoria] = @Original_IdCategoria) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Talla = 1 AND [Talla] IS NULL) OR ([Talla] = @Original_Talla)) AND ((@IsNull_Exisstencia = 1 AND [Exisstencia] IS NULL) OR ([Exisstencia] = @Original_Exisstencia)) AND ((@IsNull_Maximo = 1 AND [Maximo] IS NULL) OR ([Maximo] = @Original_Maximo)) AND ((@IsNull_Minimo = 1 AND [Minimo] IS NULL) OR ([Minimo] = @Original_Minimo)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_UltFecCompra = 1 AND [UltFecCompra] IS NULL) OR ([UltFecCompra] = @Original_UltFecCompra)))</value>
+  </data>
+  <metadata name="SqlInsertCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlInsertCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlInsertCommand.CommandText" xml:space="preserve">
+    <value>INSERT INTO [Productos] ([IdProducto], [IdCategoria], [Nombre], [Descripcion], [Talla], [Exisstencia], [Maximo], [Minimo], [Costo], [Precio], [UltFecCompra]) VALUES (@IdProducto, @IdCategoria, @Nombre, @Descripcion, @Talla, @Exisstencia, @Maximo, @Minimo, @Costo, @Precio, @UltFecCompra);
+SELECT IdProducto, IdCategoria, Nombre, Descripcion, Talla, Exisstencia, Maximo, Minimo, Costo, Precio, UltFecCompra FROM Productos WHERE (IdProducto = @IdProducto)</value>
+  </data>
+  <metadata name="SqlUpdateCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlUpdateCommand.CommandText" xml:space="preserve">
+    <value>UPDATE [Productos] SET [IdProducto] = @IdProducto, [IdCategoria] = @IdCategoria, [Nombre] = @Nombre, [Descripcion] = @Descripcion, [Talla] = @Talla, [Exisstencia] = @Exisstencia, [Maximo] = @Maximo, [Minimo] = @Minimo, [Costo] = @Costo, [Precio] = @Precio, [UltFecCompra] = @UltFecCompra WHERE (([IdProducto] = @Original_IdProducto) AND ([IdCategoria] = @Original_IdCategoria) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Descripcion = 1 AND [Descripcion] IS NULL) OR ([Descripcion] = @Original_Descripcion)) AND ((@IsNull_Talla = 1 AND [Talla] IS NULL) OR ([Talla] = @Original_Talla)) AND ((@IsNull_Exisstencia = 1 AND [Exisstencia] IS NULL) OR ([Exisstencia] = @Original_Exisstencia)) AND ((@IsNull_Maximo = 1 AND [Maximo] IS NULL) OR ([Maximo] = @Original_Maximo)) AND ((@IsNull_Minimo = 1 AND [Minimo] IS NULL) OR ([Minimo] = @Original_Minimo)) AND ((@IsNull_Costo = 1 AND [Costo] IS NULL) OR ([Costo] = @Original_Costo)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_UltFecCompra = 1 AND [UltFecCompra] IS NULL) OR ([UltFecCompra] = @Original_UltFecCompra)));
+SELECT IdProducto, IdCategoria, Nombre, Descripcion, Talla, Exisstencia, Maximo, Minimo, Costo, Precio, UltFecCompra FROM Productos WHERE (IdProducto = @IdProducto)</value>
+  </data>
+  <metadata name="ProductosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>643, 17</value>
+  </metadata>
+  <metadata name="CategoriasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>205, 56</value>
+  </metadata>
 </root>

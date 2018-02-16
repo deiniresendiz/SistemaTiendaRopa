@@ -28,10 +28,14 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         campActi(False)
-        CategoriasBindingSource.EndEdit()
-        SqlDataAdapter1.Update(TiendaRopaDataSet.Categorias)
-        TiendaRopaDataSet.Clear()
-        SqlDataAdapter1.Fill(TiendaRopaDataSet.Categorias)
+        Try
+            CategoriasBindingSource.EndEdit()
+            SqlDataAdapter1.Update(TiendaRopaDataSet.Categorias)
+            TiendaRopaDataSet.Clear()
+            SqlDataAdapter1.Fill(TiendaRopaDataSet.Categorias)
+        Catch ex As Exception
+            MessageBox.Show("Tabla bloqueada")
+        End Try
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
