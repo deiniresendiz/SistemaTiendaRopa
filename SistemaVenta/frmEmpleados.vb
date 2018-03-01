@@ -13,7 +13,7 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         EmpleadosBindingSource.AddNew()
-        textIdEmpleado.Text = EmpleadosBindingSource.Count
+        textIdEmpleado.Text = EmpleadosBindingSource.Count + 1
         campActi(True)
     End Sub
     Private Sub campActi(ByVal ban As Boolean)
@@ -39,6 +39,8 @@
         Catch ex As Exception
             MessageBox.Show("Tabla Bloqueada")
         End Try
+        TiendaRopaDataSet1.Clear()
+        SqlDataAdapter1.Fill(TiendaRopaDataSet1.Empleados)
     End Sub
     Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlClient.SqlRowUpdatedEventArgs) Handles SqlDataAdapter1.RowUpdated
         If e.Status = UpdateStatus.ErrorsOccurred Then

@@ -36,9 +36,15 @@
         Catch ex As Exception
             MessageBox.Show("Tabla bloqueada")
         End Try
+        TiendaRopaDataSet.Clear()
+        SqlDataAdapter1.Fill(TiendaRopaDataSet.Categorias)
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Dispose()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        campActi(True)
     End Sub
 End Class

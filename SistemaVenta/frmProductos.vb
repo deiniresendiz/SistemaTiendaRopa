@@ -31,7 +31,7 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         ProductosBindingSource.AddNew()
-        textIdProducto.Text = ProductosBindingSource.Count
+        textIdProducto.Text = ProductosBindingSource.Count + 1
         campAct(True)
     End Sub
 
@@ -47,8 +47,10 @@
             TiendaRopaDataSet.Clear()
             SqlDataAdapter1.Fill(TiendaRopaDataSet.Productos)
         Catch ex As Exception
-
+            MessageBox.Show("Tabla Bloqueada")
         End Try
+        TiendaRopaDataSet.Clear()
+        SqlDataAdapter1.Fill(TiendaRopaDataSet.Productos)
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

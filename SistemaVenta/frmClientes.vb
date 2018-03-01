@@ -28,7 +28,7 @@
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         campActi(True)
         ClientesBindingSource.AddNew()
-        textIdCliente.Text = ClientesBindingSource.Count
+        textIdCliente.Text = ClientesBindingSource.Count + 1
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -45,5 +45,7 @@
         Catch ex As Exception
             MessageBox.Show("tabla bloqueada")
         End Try
+        TiendaRopaDataSet.Clear()
+        SqlDataAdapter1.Fill(TiendaRopaDataSet.Clientes)
     End Sub
 End Class

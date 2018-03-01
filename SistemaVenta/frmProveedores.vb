@@ -28,7 +28,7 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         ProveedoresBindingSource.AddNew()
-        textIdProveedor.Text = ProveedoresBindingSource.Count
+        textIdProveedor.Text = ProveedoresBindingSource.Count + 1
         campAct(True)
     End Sub
 
@@ -46,5 +46,7 @@
         Catch ex As Exception
             MessageBox.Show("Tabla bloqueada")
         End Try
+        TiendaRopaDataSet.Clear()
+        SqlDataAdapter1.Fill(TiendaRopaDataSet.Proveedores)
     End Sub
 End Class
