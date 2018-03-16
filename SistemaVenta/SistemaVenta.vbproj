@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmApartado.Designer.vb">
+      <DependentUpon>frmApartado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmApartado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCategorias.Designer.vb">
       <DependentUpon>frmCategorias.vb</DependentUpon>
     </Compile>
@@ -84,6 +90,18 @@
     <Compile Include="frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCompraProducto.Designer.vb">
+      <DependentUpon>frmCompraProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompraProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucion.Designer.vb">
+      <DependentUpon>frmDevolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
@@ -94,6 +112,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.vb">
+      <DependentUpon>frmVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -123,18 +147,28 @@
     <Compile Include="frmProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TiendaRopaDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TiendaRopaDataSet.xsd</DependentUpon>
+    <Compile Include="PagoAbono.Designer.vb">
+      <DependentUpon>PagoAbono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PagoAbono.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmApartado.resx">
+      <DependentUpon>frmApartado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompraProducto.resx">
+      <DependentUpon>frmCompraProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucion.resx">
+      <DependentUpon>frmDevolucion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
@@ -148,11 +182,17 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoAbono.resx">
+      <DependentUpon>PagoAbono.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -166,17 +206,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="TiendaRopaDataSet.xsc">
-      <DependentUpon>TiendaRopaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TiendaRopaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TiendaRopaDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TiendaRopaDataSet.xss">
-      <DependentUpon>TiendaRopaDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

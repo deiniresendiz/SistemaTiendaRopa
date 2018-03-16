@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCategorias
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,9 @@ Partial Class frmCategorias
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCategorias))
         Me.textDescripcion = New System.Windows.Forms.TextBox()
-        Me.CategoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TiendaRopaDataSet = New SistemaVenta.TiendaRopaDataSet()
         Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,44 +32,20 @@ Partial Class frmCategorias
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.dgDatos = New System.Windows.Forms.DataGridView()
-        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SqlSelectCommand1 = New System.Data.SqlClient.SqlCommand()
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
-        Me.SqlInsertCommand1 = New System.Data.SqlClient.SqlCommand()
-        Me.SqlUpdateCommand1 = New System.Data.SqlClient.SqlCommand()
-        Me.SqlDeleteCommand1 = New System.Data.SqlClient.SqlCommand()
-        Me.SqlDataAdapter1 = New System.Data.SqlClient.SqlDataAdapter()
-        Me.CategoriasTableAdapter = New SistemaVenta.TiendaRopaDataSetTableAdapters.CategoriasTableAdapter()
         Me.btnModificar = New System.Windows.Forms.Button()
-        CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textDescripcion
         '
-        Me.textDescripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "Descripcion", True))
         Me.textDescripcion.Location = New System.Drawing.Point(128, 56)
         Me.textDescripcion.Multiline = True
         Me.textDescripcion.Name = "textDescripcion"
         Me.textDescripcion.Size = New System.Drawing.Size(446, 79)
         Me.textDescripcion.TabIndex = 49
         '
-        'CategoriasBindingSource
-        '
-        Me.CategoriasBindingSource.DataMember = "Categorias"
-        Me.CategoriasBindingSource.DataSource = Me.TiendaRopaDataSet
-        '
-        'TiendaRopaDataSet
-        '
-        Me.TiendaRopaDataSet.DataSetName = "TiendaRopaDataSet"
-        Me.TiendaRopaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'textNombre
         '
-        Me.textNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "Nombre", True))
         Me.textNombre.Location = New System.Drawing.Point(331, 21)
         Me.textNombre.Name = "textNombre"
         Me.textNombre.Size = New System.Drawing.Size(243, 20)
@@ -111,7 +83,6 @@ Partial Class frmCategorias
         '
         'textIdCategoria
         '
-        Me.textIdCategoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CategoriasBindingSource, "IdCategoria", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"))
         Me.textIdCategoria.Location = New System.Drawing.Point(128, 21)
         Me.textIdCategoria.Name = "textIdCategoria"
         Me.textIdCategoria.ReadOnly = True
@@ -150,72 +121,11 @@ Partial Class frmCategorias
         '
         'dgDatos
         '
-        Me.dgDatos.AutoGenerateColumns = False
         Me.dgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgDatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCategoriaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
-        Me.dgDatos.DataSource = Me.CategoriasBindingSource
         Me.dgDatos.Location = New System.Drawing.Point(17, 159)
         Me.dgDatos.Name = "dgDatos"
         Me.dgDatos.Size = New System.Drawing.Size(557, 221)
         Me.dgDatos.TabIndex = 36
-        '
-        'IdCategoriaDataGridViewTextBoxColumn
-        '
-        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria"
-        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'SqlSelectCommand1
-        '
-        Me.SqlSelectCommand1.CommandText = "SELECT        Categorias.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Categorias"
-        Me.SqlSelectCommand1.Connection = Me.SqlConnection1
-        '
-        'SqlConnection1
-        '
-        Me.SqlConnection1.ConnectionString = "Data Source=DESKTOP-NC9ERBN;Initial Catalog=TiendaRopa;Integrated Security=True"
-        Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
-        '
-        'SqlInsertCommand1
-        '
-        Me.SqlInsertCommand1.CommandText = resources.GetString("SqlInsertCommand1.CommandText")
-        Me.SqlInsertCommand1.Connection = Me.SqlConnection1
-        Me.SqlInsertCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@IdCategoria", System.Data.SqlDbType.Int, 0, "IdCategoria"), New System.Data.SqlClient.SqlParameter("@Nombre", System.Data.SqlDbType.VarChar, 0, "Nombre"), New System.Data.SqlClient.SqlParameter("@Descripcion", System.Data.SqlDbType.VarChar, 0, "Descripcion")})
-        '
-        'SqlUpdateCommand1
-        '
-        Me.SqlUpdateCommand1.CommandText = resources.GetString("SqlUpdateCommand1.CommandText")
-        Me.SqlUpdateCommand1.Connection = Me.SqlConnection1
-        Me.SqlUpdateCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@IdCategoria", System.Data.SqlDbType.Int, 0, "IdCategoria"), New System.Data.SqlClient.SqlParameter("@Nombre", System.Data.SqlDbType.VarChar, 0, "Nombre"), New System.Data.SqlClient.SqlParameter("@Descripcion", System.Data.SqlDbType.VarChar, 0, "Descripcion"), New System.Data.SqlClient.SqlParameter("@Original_IdCategoria", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "IdCategoria", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Nombre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Descripcion", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Descripcion", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Descripcion", System.Data.DataRowVersion.Original, Nothing)})
-        '
-        'SqlDeleteCommand1
-        '
-        Me.SqlDeleteCommand1.CommandText = resources.GetString("SqlDeleteCommand1.CommandText")
-        Me.SqlDeleteCommand1.Connection = Me.SqlConnection1
-        Me.SqlDeleteCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@Original_IdCategoria", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "IdCategoria", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Nombre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Nombre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Nombre", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_Descripcion", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Descripcion", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_Descripcion", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "Descripcion", System.Data.DataRowVersion.Original, Nothing)})
-        '
-        'SqlDataAdapter1
-        '
-        Me.SqlDataAdapter1.DeleteCommand = Me.SqlDeleteCommand1
-        Me.SqlDataAdapter1.InsertCommand = Me.SqlInsertCommand1
-        Me.SqlDataAdapter1.SelectCommand = Me.SqlSelectCommand1
-        Me.SqlDataAdapter1.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "Categorias", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("IdCategoria", "IdCategoria"), New System.Data.Common.DataColumnMapping("Nombre", "Nombre"), New System.Data.Common.DataColumnMapping("Descripcion", "Descripcion")})})
-        Me.SqlDataAdapter1.UpdateCommand = Me.SqlUpdateCommand1
-        '
-        'CategoriasTableAdapter
-        '
-        Me.CategoriasTableAdapter.ClearBeforeFill = True
         '
         'btnModificar
         '
@@ -245,8 +155,6 @@ Partial Class frmCategorias
         Me.Controls.Add(Me.dgDatos)
         Me.Name = "frmCategorias"
         Me.Text = "Categorias"
-        CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiendaRopaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -263,17 +171,5 @@ Partial Class frmCategorias
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents dgDatos As DataGridView
-    Friend WithEvents SqlSelectCommand1 As SqlClient.SqlCommand
-    Friend WithEvents SqlInsertCommand1 As SqlClient.SqlCommand
-    Friend WithEvents SqlUpdateCommand1 As SqlClient.SqlCommand
-    Friend WithEvents SqlDeleteCommand1 As SqlClient.SqlCommand
-    Friend WithEvents SqlDataAdapter1 As SqlClient.SqlDataAdapter
-    Friend WithEvents SqlConnection1 As SqlClient.SqlConnection
-    Friend WithEvents TiendaRopaDataSet As TiendaRopaDataSet
-    Friend WithEvents CategoriasBindingSource As BindingSource
-    Friend WithEvents CategoriasTableAdapter As TiendaRopaDataSetTableAdapters.CategoriasTableAdapter
-    Friend WithEvents IdCategoriaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnModificar As Button
 End Class
