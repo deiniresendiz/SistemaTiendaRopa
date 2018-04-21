@@ -96,6 +96,36 @@
     <Compile Include="frmCompraProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConsultaApartado.Designer.vb">
+      <DependentUpon>frmConsultaApartado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaApartado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaCompra.Designer.vb">
+      <DependentUpon>frmConsultaCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaDevolucion.Designer.vb">
+      <DependentUpon>frmConsultaDevolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaDevolucion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPagoAbono.Designer.vb">
+      <DependentUpon>frmConsultaPagoAbono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaPagoAbono.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaVenta.Designer.vb">
+      <DependentUpon>frmConsultaVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDevolucion.Designer.vb">
       <DependentUpon>frmDevolucion.vb</DependentUpon>
     </Compile>
@@ -166,6 +196,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompraProducto.resx">
       <DependentUpon>frmCompraProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaApartado.resx">
+      <DependentUpon>frmConsultaApartado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaCompra.resx">
+      <DependentUpon>frmConsultaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaDevolucion.resx">
+      <DependentUpon>frmConsultaDevolucion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaPagoAbono.resx">
+      <DependentUpon>frmConsultaPagoAbono.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaVenta.resx">
+      <DependentUpon>frmConsultaVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDevolucion.resx">
       <DependentUpon>frmDevolucion.vb</DependentUpon>
