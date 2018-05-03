@@ -22,5 +22,290 @@ SistemaVenta
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:SistemaVenta.DataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECLIENTESDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEEMPLEADOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPRODUCTOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPROVEEDORESDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASPERIODODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSPERIODODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRASPERIODODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESPERIODODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECLIENTESRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEEMPLEADOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPRODUCTOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPROVEEDORESRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASPERIODORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSPERIODORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRASPERIODORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESPERIODORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECLIENTESRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEEMPLEADOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPRODUCTOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEPROVEEDORESRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEVENTASPERIODORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEAPARTADOSPERIODORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTECOMPRASPERIODORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1.REPORTEDEVOLUCIONESPERIODORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEAPARTADOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTECLIENTESTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTECOMPRATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEEMPLEADOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEPRODUCTOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEPROVEEDORESTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEVENTASTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEDEVOLUCIONESTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEVENTASPERIODOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEAPARTADOSPERIODOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTECOMPRASPERIODOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.REPORTEDEVOLUCIONESPERIODOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(SistemaVenta.DataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(SistemaVenta.DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(SistemaVenta.DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.UpdateAll(SistemaVenta.DataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SistemaVenta.DataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

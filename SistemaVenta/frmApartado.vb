@@ -206,13 +206,6 @@ Public Class frmApartado
             Next
             command.CommandText = "declare @saldo money; set @saldo =(select Saldo from Clientes where IdCliente = " & Val(textIdClienteC.Text) & "); update Clientes set Saldo = (@saldo + '" & CDbl(textTotal.Text) & "')  where IdCliente = " & Val(textIdClienteC.Text) & ""
             command.ExecuteNonQuery()
-            If Not textAnticipo.Text = String.Empty Then
-                command.CommandText = "declare @x integer; set @x = (select count(*) from Abonos) +1; insert into Abonos(IdAbono,IdApartado,FechaAbono,Importe) values(@x," & Val(textIdApartado.Text) & ",'" & fecha & "','" & CDbl(textAnticipo.Text) & "')"
-                command.ExecuteNonQuery()
-                command.CommandText = "declare @saldo money; set @saldo =(select Saldo from Clientes where IdCliente = '" & Val(textIdClienteC.Text) & "'); update Clientes set Saldo = (@saldo - '" & CDbl(textAnticipo.Text) & "')  where IdCliente = '" & Val(textIdClienteC.Text) & "';"
-                command.ExecuteNonQuery()
-                MsgBox("3")
-            End If
             If MsgBox("desea ejecutar transacción", MsgBoxStyle.YesNo, "ejecutar") = MsgBoxResult.Yes Then
                 transaction.Commit()
                 MsgBox("ok")
@@ -301,7 +294,6 @@ Public Class frmApartado
         calcularTotales()
         btnNuevo.Enabled = False
         btnGuardar.Enabled = True
-        textAnticipo.Enabled = True
         gruopProducto.Visible = False
         grupClientes.Visible = False
         grupEmpleados.Visible = True
@@ -334,7 +326,6 @@ Public Class frmApartado
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         guradarDatos()
-        textAnticipo.Enabled = False
         iniRest()
     End Sub
 
@@ -355,24 +346,18 @@ Public Class frmApartado
         End If
     End Sub
 
-    Private Sub textAnticipo_TextChanged(sender As Object, e As EventArgs) Handles textAnticipo.TextChanged
+    Private Sub textAnticipo_TextChanged(sender As Object, e As EventArgs)
         calRestante()
     End Sub
     Sub calRestante()
         Try
-            If Not textAnticipo.Text = String.Empty Then
-                Dim x As Integer = CDbl(textAnticipo.Text)
-                Dim y As Double = CDbl(textTotal.Text)
-                textRestante.Text = (y - x)
-            Else
-                textRestante.Text = "0"
-            End If
+
         Catch ex As Exception
 
         End Try
     End Sub
 
-    Private Sub textAnticipo_Click(sender As Object, e As EventArgs) Handles textAnticipo.Click
-        textAnticipo.Text = String.Empty
+    Private Sub textAnticipo_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

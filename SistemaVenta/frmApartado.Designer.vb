@@ -138,10 +138,6 @@ Partial Class frmApartado
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CsotoCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.textAnticipo = New System.Windows.Forms.TextBox()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.textRestante = New System.Windows.Forms.TextBox()
         Me.gruopProducto.SuspendLayout()
         CType(Me.dgDatosProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grupEmpleados.SuspendLayout()
@@ -1099,7 +1095,7 @@ Partial Class frmApartado
         '
         'textTotal
         '
-        Me.textTotal.Location = New System.Drawing.Point(813, 447)
+        Me.textTotal.Location = New System.Drawing.Point(821, 423)
         Me.textTotal.Name = "textTotal"
         Me.textTotal.ReadOnly = True
         Me.textTotal.Size = New System.Drawing.Size(117, 20)
@@ -1108,7 +1104,7 @@ Partial Class frmApartado
         '
         'textIva
         '
-        Me.textIva.Location = New System.Drawing.Point(813, 418)
+        Me.textIva.Location = New System.Drawing.Point(821, 394)
         Me.textIva.Name = "textIva"
         Me.textIva.ReadOnly = True
         Me.textIva.Size = New System.Drawing.Size(117, 20)
@@ -1117,7 +1113,7 @@ Partial Class frmApartado
         '
         'textSubTotal
         '
-        Me.textSubTotal.Location = New System.Drawing.Point(811, 389)
+        Me.textSubTotal.Location = New System.Drawing.Point(819, 365)
         Me.textSubTotal.Name = "textSubTotal"
         Me.textSubTotal.ReadOnly = True
         Me.textSubTotal.Size = New System.Drawing.Size(117, 20)
@@ -1128,7 +1124,7 @@ Partial Class frmApartado
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(745, 447)
+        Me.Label14.Location = New System.Drawing.Point(753, 423)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(59, 18)
         Me.Label14.TabIndex = 74
@@ -1138,7 +1134,7 @@ Partial Class frmApartado
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(761, 417)
+        Me.Label13.Location = New System.Drawing.Point(769, 393)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(43, 18)
         Me.Label13.TabIndex = 73
@@ -1148,7 +1144,7 @@ Partial Class frmApartado
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(713, 388)
+        Me.Label12.Location = New System.Drawing.Point(721, 364)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(92, 18)
         Me.Label12.TabIndex = 72
@@ -1204,53 +1200,11 @@ Partial Class frmApartado
         Me.SubTotal.Name = "SubTotal"
         Me.SubTotal.ReadOnly = True
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(721, 360)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(83, 18)
-        Me.Label29.TabIndex = 80
-        Me.Label29.Text = "Anticipo:"
-        '
-        'textAnticipo
-        '
-        Me.textAnticipo.Enabled = False
-        Me.textAnticipo.Location = New System.Drawing.Point(813, 360)
-        Me.textAnticipo.Name = "textAnticipo"
-        Me.textAnticipo.Size = New System.Drawing.Size(117, 20)
-        Me.textAnticipo.TabIndex = 81
-        Me.textAnticipo.Text = "0"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(718, 479)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(94, 18)
-        Me.Label36.TabIndex = 82
-        Me.Label36.Text = "Restante:"
-        '
-        'textRestante
-        '
-        Me.textRestante.Location = New System.Drawing.Point(813, 477)
-        Me.textRestante.Name = "textRestante"
-        Me.textRestante.ReadOnly = True
-        Me.textRestante.Size = New System.Drawing.Size(117, 20)
-        Me.textRestante.TabIndex = 83
-        Me.textRestante.Text = "0"
-        '
         'frmApartado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(942, 561)
-        Me.Controls.Add(Me.textRestante)
-        Me.Controls.Add(Me.Label36)
-        Me.Controls.Add(Me.textAnticipo)
-        Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.textTotal)
@@ -1408,8 +1362,4 @@ Partial Class frmApartado
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents CsotoCompra As DataGridViewTextBoxColumn
     Friend WithEvents SubTotal As DataGridViewTextBoxColumn
-    Friend WithEvents Label29 As Label
-    Friend WithEvents textAnticipo As TextBox
-    Friend WithEvents Label36 As Label
-    Friend WithEvents textRestante As TextBox
 End Class

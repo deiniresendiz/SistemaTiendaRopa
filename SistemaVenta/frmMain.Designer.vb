@@ -33,6 +33,8 @@ Partial Class frmMain
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DevolucionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PagoAbonosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompraProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,8 +42,18 @@ Partial Class frmMain
         Me.ApartadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AbonoApartadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ApartadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PagoAbonosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprasToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartadosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevolucionesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartadosEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevolucionesEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompraEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -101,20 +113,32 @@ Partial Class frmMain
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         '
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'DevolucionesToolStripMenuItem
         '
         Me.DevolucionesToolStripMenuItem.Name = "DevolucionesToolStripMenuItem"
-        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DevolucionesToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.DevolucionesToolStripMenuItem.Text = "Devoluciones"
+        '
+        'ApartadosToolStripMenuItem1
+        '
+        Me.ApartadosToolStripMenuItem1.Name = "ApartadosToolStripMenuItem1"
+        Me.ApartadosToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
+        Me.ApartadosToolStripMenuItem1.Text = "Apartados"
+        '
+        'PagoAbonosToolStripMenuItem
+        '
+        Me.PagoAbonosToolStripMenuItem.Name = "PagoAbonosToolStripMenuItem"
+        Me.PagoAbonosToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
+        Me.PagoAbonosToolStripMenuItem.Text = "Pago Abonos"
         '
         'MovimientosToolStripMenuItem
         '
@@ -155,21 +179,82 @@ Partial Class frmMain
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem1, Me.EmpleadosToolStripMenuItem1, Me.ComprasToolStripMenuItem1, Me.ComprasToolStripMenuItem2, Me.VentasToolStripMenuItem1, Me.ProductosToolStripMenuItem, Me.ApartadosToolStripMenuItem2, Me.DevolucionesToolStripMenuItem1, Me.VentasEnUnPeriodoToolStripMenuItem, Me.ApartadosEnUnPeriodoToolStripMenuItem, Me.DevolucionesEnUnPeriodoToolStripMenuItem, Me.CompraEnUnPeriodoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
-        'ApartadosToolStripMenuItem1
+        'ProveedoresToolStripMenuItem1
         '
-        Me.ApartadosToolStripMenuItem1.Name = "ApartadosToolStripMenuItem1"
-        Me.ApartadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.ApartadosToolStripMenuItem1.Text = "Apartados"
+        Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
         '
-        'PagoAbonosToolStripMenuItem
+        'EmpleadosToolStripMenuItem1
         '
-        Me.PagoAbonosToolStripMenuItem.Name = "PagoAbonosToolStripMenuItem"
-        Me.PagoAbonosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PagoAbonosToolStripMenuItem.Text = "Pago Abonos"
+        Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
+        '
+        'ComprasToolStripMenuItem1
+        '
+        Me.ComprasToolStripMenuItem1.Name = "ComprasToolStripMenuItem1"
+        Me.ComprasToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.ComprasToolStripMenuItem1.Text = "Clientes"
+        '
+        'ComprasToolStripMenuItem2
+        '
+        Me.ComprasToolStripMenuItem2.Name = "ComprasToolStripMenuItem2"
+        Me.ComprasToolStripMenuItem2.Size = New System.Drawing.Size(185, 22)
+        Me.ComprasToolStripMenuItem2.Text = "Productos"
+        '
+        'VentasToolStripMenuItem1
+        '
+        Me.VentasToolStripMenuItem1.Name = "VentasToolStripMenuItem1"
+        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.VentasToolStripMenuItem1.Text = "Compras"
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.ProductosToolStripMenuItem.Text = "Ventas"
+        '
+        'ApartadosToolStripMenuItem2
+        '
+        Me.ApartadosToolStripMenuItem2.Name = "ApartadosToolStripMenuItem2"
+        Me.ApartadosToolStripMenuItem2.Size = New System.Drawing.Size(185, 22)
+        Me.ApartadosToolStripMenuItem2.Text = "Apartados"
+        '
+        'DevolucionesToolStripMenuItem1
+        '
+        Me.DevolucionesToolStripMenuItem1.Name = "DevolucionesToolStripMenuItem1"
+        Me.DevolucionesToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.DevolucionesToolStripMenuItem1.Text = "Devoluciones"
+        '
+        'VentasEnUnPeriodoToolStripMenuItem
+        '
+        Me.VentasEnUnPeriodoToolStripMenuItem.Name = "VentasEnUnPeriodoToolStripMenuItem"
+        Me.VentasEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.VentasEnUnPeriodoToolStripMenuItem.Text = "Ventas en un periodo"
+        '
+        'ApartadosEnUnPeriodoToolStripMenuItem
+        '
+        Me.ApartadosEnUnPeriodoToolStripMenuItem.Name = "ApartadosEnUnPeriodoToolStripMenuItem"
+        Me.ApartadosEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.ApartadosEnUnPeriodoToolStripMenuItem.Text = "Apartados en un periodo"
+        '
+        'DevolucionesEnUnPeriodoToolStripMenuItem
+        '
+        Me.DevolucionesEnUnPeriodoToolStripMenuItem.Name = "DevolucionesEnUnPeriodoToolStripMenuItem"
+        Me.DevolucionesEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.DevolucionesEnUnPeriodoToolStripMenuItem.Text = "Devoluciones en un periodo"
+        '
+        'CompraEnUnPeriodoToolStripMenuItem
+        '
+        Me.CompraEnUnPeriodoToolStripMenuItem.Name = "CompraEnUnPeriodoToolStripMenuItem"
+        Me.CompraEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.CompraEnUnPeriodoToolStripMenuItem.Text = "Compra en un periodo"
         '
         'frmMain
         '
@@ -209,4 +294,16 @@ Partial Class frmMain
     Friend WithEvents AbonoApartadoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ApartadosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PagoAbonosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents EmpleadosToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ComprasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ComprasToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents VentasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApartadosToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents DevolucionesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents VentasEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApartadosEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DevolucionesEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CompraEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
 End Class
