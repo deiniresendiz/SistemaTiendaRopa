@@ -1,4 +1,9 @@
 ﻿Public Class frmProveedores
+    Private Sub frmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet1.Proveedores' Puede moverla o quitarla según sea necesario.
+        Me.ProveedoresTableAdapter.Fill(Me.DataSet1.Proveedores)
+
+    End Sub
     'Private Sub frmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     '    'TODO: esta línea de código carga datos en la tabla 'TiendaRopaDataSet.Proveedores' Puede moverla o quitarla según sea necesario.
     '    Me.ProveedoresTableAdapter.Fill(Me.TiendaRopaDataSet.Proveedores)

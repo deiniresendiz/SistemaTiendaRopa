@@ -42,7 +42,9 @@ Partial Class frmReporte
         Me.ClientSize = New System.Drawing.Size(900, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frmReporte"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmReporte"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub

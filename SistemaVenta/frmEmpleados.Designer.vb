@@ -22,6 +22,7 @@ Partial Class frmEmpleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dgDatos = New System.Windows.Forms.DataGridView()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -41,12 +42,28 @@ Partial Class frmEmpleados
         Me.TextCp = New System.Windows.Forms.TextBox()
         Me.textTelefono = New System.Windows.Forms.TextBox()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.DataSet1 = New SistemaVenta.DataSet1()
+        Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmpleadosTableAdapter = New SistemaVenta.DataSet1TableAdapters.EmpleadosTableAdapter()
+        Me.IdEmpleadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PuestoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColoniaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CpDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgDatos
         '
+        Me.dgDatos.AutoGenerateColumns = False
         Me.dgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgDatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdEmpleadoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.PuestoDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.CpDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.dgDatos.DataSource = Me.EmpleadosBindingSource
         Me.dgDatos.Location = New System.Drawing.Point(12, 151)
         Me.dgDatos.Name = "dgDatos"
         Me.dgDatos.Size = New System.Drawing.Size(720, 267)
@@ -219,6 +236,68 @@ Partial Class frmEmpleados
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmpleadosBindingSource
+        '
+        Me.EmpleadosBindingSource.DataMember = "Empleados"
+        Me.EmpleadosBindingSource.DataSource = Me.DataSet1
+        '
+        'EmpleadosTableAdapter
+        '
+        Me.EmpleadosTableAdapter.ClearBeforeFill = True
+        '
+        'IdEmpleadoDataGridViewTextBoxColumn
+        '
+        Me.IdEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "IdEmpleado"
+        Me.IdEmpleadoDataGridViewTextBoxColumn.HeaderText = "IdEmpleado"
+        Me.IdEmpleadoDataGridViewTextBoxColumn.Name = "IdEmpleadoDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'PuestoDataGridViewTextBoxColumn
+        '
+        Me.PuestoDataGridViewTextBoxColumn.DataPropertyName = "Puesto"
+        Me.PuestoDataGridViewTextBoxColumn.HeaderText = "Puesto"
+        Me.PuestoDataGridViewTextBoxColumn.Name = "PuestoDataGridViewTextBoxColumn"
+        '
+        'CalleDataGridViewTextBoxColumn
+        '
+        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "Calle"
+        Me.CalleDataGridViewTextBoxColumn.HeaderText = "Calle"
+        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
+        '
+        'ColoniaDataGridViewTextBoxColumn
+        '
+        Me.ColoniaDataGridViewTextBoxColumn.DataPropertyName = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.HeaderText = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.Name = "ColoniaDataGridViewTextBoxColumn"
+        '
+        'CpDataGridViewTextBoxColumn
+        '
+        Me.CpDataGridViewTextBoxColumn.DataPropertyName = "Cp"
+        Me.CpDataGridViewTextBoxColumn.HeaderText = "Cp"
+        Me.CpDataGridViewTextBoxColumn.Name = "CpDataGridViewTextBoxColumn"
+        '
+        'TelefonoDataGridViewTextBoxColumn
+        '
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -246,6 +325,8 @@ Partial Class frmEmpleados
         Me.Name = "frmEmpleados"
         Me.Text = "Empleados"
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -270,4 +351,15 @@ Partial Class frmEmpleados
     Friend WithEvents TextCp As TextBox
     Friend WithEvents textTelefono As TextBox
     Friend WithEvents btnModificar As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents EmpleadosBindingSource As BindingSource
+    Friend WithEvents EmpleadosTableAdapter As DataSet1TableAdapters.EmpleadosTableAdapter
+    Friend WithEvents IdEmpleadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PuestoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CalleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ColoniaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CpDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

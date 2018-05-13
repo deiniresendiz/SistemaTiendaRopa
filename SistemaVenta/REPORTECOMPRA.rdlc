@@ -540,8 +540,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>3.93911cm</Top>
-            <Left>1.44071cm</Left>
+            <Top>5.39791cm</Top>
+            <Left>1.145cm</Left>
             <Height>1.2cm</Height>
             <Width>20.48978cm</Width>
             <Style>
@@ -565,8 +565,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>6.06391cm</Top>
-            <Left>17.66501cm</Left>
+            <Top>7.52271cm</Top>
+            <Left>17.3693cm</Left>
             <Height>0.6cm</Height>
             <Width>1.15062cm</Width>
             <ZIndex>1</ZIndex>
@@ -595,8 +595,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.06391cm</Top>
-            <Left>18.99202cm</Left>
+            <Top>7.52271cm</Top>
+            <Left>18.69631cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>2</ZIndex>
@@ -955,8 +955,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>6.06391cm</Top>
-            <Left>7.53682cm</Left>
+            <Top>7.52271cm</Top>
+            <Left>7.24111cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>3</ZIndex>
@@ -976,7 +976,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Reporte proveedores</Value>
+                    <Value>Reporte de compras</Value>
                     <Style>
                       <FontSize>17pt</FontSize>
                     </Style>
@@ -986,8 +986,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.90453cm</Top>
-            <Left>11.34841cm</Left>
+            <Top>2.36333cm</Top>
+            <Left>11.0527cm</Left>
             <Height>0.99688cm</Height>
             <Width>7.17151cm</Width>
             <ZIndex>4</ZIndex>
@@ -1005,8 +1005,8 @@
             <Source>Embedded</Source>
             <Value>logo2</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.35208cm</Top>
-            <Left>4.26856cm</Left>
+            <Top>1.81088cm</Top>
+            <Left>3.97285cm</Left>
             <Height>2.61125cm</Height>
             <Width>3.24625cm</Width>
             <ZIndex>5</ZIndex>
@@ -1031,8 +1031,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.36333cm</Top>
-            <Left>8.66257cm</Left>
+            <Top>3.82213cm</Top>
+            <Left>8.36686cm</Left>
             <Height>0.6cm</Height>
             <Width>3.34667cm</Width>
             <ZIndex>6</ZIndex>
@@ -1061,8 +1061,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>2.36333cm</Top>
-            <Left>12.18563cm</Left>
+            <Top>3.82213cm</Top>
+            <Left>11.88992cm</Left>
             <Height>0.6cm</Height>
             <Width>6.33429cm</Width>
             <ZIndex>7</ZIndex>
@@ -1077,7 +1077,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.69962in</Height>
+        <Height>6.06562in</Height>
         <Style />
       </Body>
       <Width>9.07601in</Width>

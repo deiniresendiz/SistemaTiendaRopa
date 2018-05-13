@@ -1,10 +1,13 @@
-﻿Module opcionReporte
-    Public FI, FF As String
+﻿Imports System.Data.SqlClient
+Imports System.Configuration
+Module opcionReporte
+    Public FI, FF, EDO As String
     Public conFecha As Boolean = False
+    Public conEstado As Boolean = False
     Public reporteOpcion As Integer
-    Public estado As Boolean = False
     Public venta As Boolean = False
     Public reporte = New String() {"REPORTEPROVEEDORES", "REPORTEEMPLEADOS", "REPORTECOMPRA", "REPORTECLIENTES", "REPORTEPRODUCTOS", "REPORTEVENTAS", "REPORTEAPARTADOS", "REPORTEDEVOLUCIONES", "REPORTEVENTASPERIODO", "REPORTEAPARTADOSPERIODO", "REPORTECOMPRASPERIODO", "REPORTEDEVOLUCIONESPERIODO", "REPORTEVENTASPERIODOESTADO", "REPORTEAPARTADOSPERIODOESTADO"}
+    Public estado As String = ""
 
     'CREATE PROCEDURE REPORTEPROVEEDORES As Select * FROM Proveedores
     'CREATE PROCEDURE REPORTEEMPLEADOS As Select * FROM Empleados 
@@ -20,4 +23,52 @@
     'CREATE PROCEDURE REPORTEDEVOLUCIONESPERIODO (@FI date, @FF date) As Select * FROM Devoluciones where Devoluciones.FechaDevolucion between @FI and @FF
     'CREATE PROCEDURE REPORTEAPARTADOSPERIODOESTADO (@FI date, @FF date,@EDO varchar(1)) As Select * FROM vwApartados where vwApartados.FechaActivo between @FI and @FF and vwApartados.Estado = @EDO
 
+    Public Function openConnection()
+        Dim conexionsql As SqlConnection
+        conexionsql = New SqlConnection(ConfigurationManager.ConnectionStrings("Conexion").ConnectionString)
+
+        Return conexionsql
+    End Function
+    Public Function cerrarConexion()
+        Dim conexionsql As SqlConnection
+        conexionsql = New SqlConnection(ConfigurationManager.ConnectionStrings("Conexion").ConnectionString)
+
+        conexionsql.Close()
+
+        Return conexionsql
+    End Function
+    Public Function OpenMaster()
+        'Dim conexionBitacora As New SqlConnection("Data Source=DESKTOP-NC9ERBN;Initial Catalog=master; Integrated Security='True';")
+        Dim conexionBitacora As New SqlConnection("Data Source = DESKTOP-NC9ERBN; initial catalog='master'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+    Public Function OpenBitacora()
+        Dim conexionBitacora As New SqlConnection("Data Source = DESKTOP-NC9ERBN; initial catalog='BitacoraSistemaRopa'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+
+    Public Function cerrarBitacora()
+        Dim conexionBitacora As New SqlConnection("Data Source = DESKTOP-NC9ERBN; initial catalog='BitacoraSistemaRopa'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
+    Public Function cerrarMaster()
+        Dim conexionBitacora As New SqlConnection("Data Source = DESKTOP-NC9ERBN; initial catalog='master'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
+    Public Function quitarComillas(message As String)
+        While message.Contains("'")
+            Dim x As Integer = message.IndexOf("'")
+            message = message.Remove(x, 1)
+        End While
+        Return message
+    End Function
+    Public moduloUsuario As String
 End Module

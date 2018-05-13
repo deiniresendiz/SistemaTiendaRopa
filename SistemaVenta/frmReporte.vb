@@ -18,19 +18,24 @@ Public Class frmReporte
         ReportViewer1.RefreshReport()
         ReportViewer1.LocalReport.Refresh()
 
-        If conFecha Then
+
+        If conEstado Then
             Adaptador.SelectCommand = New SqlCommand
             Adaptador.SelectCommand.Connection = Conexion
             Adaptador.SelectCommand.CommandText = reporte(reporteOpcion)
             Adaptador.SelectCommand.CommandType = CommandType.StoredProcedure
             Dim param1 = New SqlParameter("@FI", SqlDbType.Date)
             Dim param2 = New SqlParameter("@FF", SqlDbType.Date)
+            Dim param3 = New SqlParameter("@EDO", SqlDbType.VarChar)
             param1.Direction = ParameterDirection.Input
             param2.Direction = ParameterDirection.Input
+            param3.Direction = ParameterDirection.Input
             param1.Value = CDate(FI)
             param2.Value = CDate(FF)
+            param3.Value = EDO
             Adaptador.SelectCommand.Parameters.Add(param1)
             Adaptador.SelectCommand.Parameters.Add(param2)
+            Adaptador.SelectCommand.Parameters.Add(param3)
             Adaptador.Fill(Data)
             Data.DataSetName = "Data1"
             Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
@@ -38,19 +43,45 @@ Public Class frmReporte
             Reportes.Value = Data.Tables(0)
             Dim p1 As New ReportParameter("FI", FI)
             Dim p2 As New ReportParameter("FF", FF)
+            Dim p3 As New ReportParameter("EDO", EDO)
             Me.ReportViewer1.LocalReport.DataSources.Add(Reportes)
             Me.ReportViewer1.LocalReport.ReportPath = "C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\" & reporte(reporteOpcion) & ".rdlc"
-            ReportViewer1.LocalReport.SetParameters(New ReportParameter() {p1, p2})
-
+            ReportViewer1.LocalReport.SetParameters(New ReportParameter() {p1, p2, p3})
         Else
+            If conFecha Then
+                Adaptador.SelectCommand = New SqlCommand
+                Adaptador.SelectCommand.Connection = Conexion
+                Adaptador.SelectCommand.CommandText = reporte(reporteOpcion)
+                Adaptador.SelectCommand.CommandType = CommandType.StoredProcedure
+                Dim param1 = New SqlParameter("@FI", SqlDbType.Date)
+                Dim param2 = New SqlParameter("@FF", SqlDbType.Date)
+                param1.Direction = ParameterDirection.Input
+                param2.Direction = ParameterDirection.Input
+                param1.Value = CDate(FI)
+                param2.Value = CDate(FF)
+                Adaptador.SelectCommand.Parameters.Add(param1)
+                Adaptador.SelectCommand.Parameters.Add(param2)
+                Adaptador.Fill(Data)
+                Data.DataSetName = "Data1"
+                Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+                Reportes.Name = "DataSet1"
+                Reportes.Value = Data.Tables(0)
+                Dim p1 As New ReportParameter("FI", FI)
+                Dim p2 As New ReportParameter("FF", FF)
+                Me.ReportViewer1.LocalReport.DataSources.Add(Reportes)
+                Me.ReportViewer1.LocalReport.ReportPath = "C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\" & reporte(reporteOpcion) & ".rdlc"
+                ReportViewer1.LocalReport.SetParameters(New ReportParameter() {p1, p2})
 
-            Cmd.CommandType = CommandType.StoredProcedure
-            Adaptador.Fill(Data)
-            Data.DataSetName = "DataSet1"
-            Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
-            Me.ReportViewer1.LocalReport.DataSources.Add(Reportes)
-            Me.ReportViewer1.LocalReport.ReportPath = "C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\" & reporte(reporteOpcion) & ".rdlc"
+            Else
 
+                Cmd.CommandType = CommandType.StoredProcedure
+                Adaptador.Fill(Data)
+                Data.DataSetName = "DataSet1"
+                Dim Reportes As New ReportDataSource("DataSet1", Data.Tables(0))
+                Me.ReportViewer1.LocalReport.DataSources.Add(Reportes)
+                Me.ReportViewer1.LocalReport.ReportPath = "C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\" & reporte(reporteOpcion) & ".rdlc"
+
+            End If
         End If
         ReportViewer1.LocalReport.Refresh()
         Me.ReportViewer1.RefreshReport()

@@ -56,4 +56,10 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Dispose()
     End Sub
+
+    Private Sub frmProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet1.Productos' Puede moverla o quitarla según sea necesario.
+        Me.ProductosTableAdapter.Fill(Me.DataSet1.Productos)
+
+    End Sub
 End Class

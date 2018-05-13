@@ -1,4 +1,9 @@
 ﻿Public Class frmEmpleados
+    Private Sub frmEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet1.Empleados' Puede moverla o quitarla según sea necesario.
+        Me.EmpleadosTableAdapter.Fill(Me.DataSet1.Empleados)
+
+    End Sub
     'Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     '    campActi(False)
     '    'TODO: esta línea de código carga datos en la tabla 'TiendaRopaDataSet1.Empleados' Puede moverla o quitarla según sea necesario.

@@ -946,6 +946,7 @@
         <Source>Embedded</Source>
         <Value>logo2</Value>
         <Sizing>FitProportional</Sizing>
+        <Top>0.55245cm</Top>
         <Left>6.79661cm</Left>
         <Height>2.61125cm</Height>
         <Width>3.24625cm</Width>

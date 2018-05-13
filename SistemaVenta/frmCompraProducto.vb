@@ -3,7 +3,10 @@ Public Class frmCompraProducto
     Dim connection As New SqlConnection("Data Source=DESKTOP-NC9ERBN;Initial Catalog=SistemaRopa; Integrated Security='True';")
     Dim comando As New SqlCommand
     Dim lector As SqlDataReader
+    Dim conexionBitacora = OpenBitacora()
+    Dim BitacoraComando As SqlCommand = conexionBitacora.CreateCommand()
     Private Sub frmCompraProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         connection.Close()
         connection.Open()
     End Sub
@@ -257,12 +260,23 @@ Public Class frmCompraProducto
             End If
         Catch ex As Exception
             MsgBox("Commit Exception Type: {0}no se pudo insertar por error")
+            conexionBitacora.open()
+            Dim errMessage As String = quitarComillas(ex.Message)
+            BitacoraComando.CommandText = "declare @x integer; set @x = (select count(*) from Bitacora) +1;INSERT INTO Bitacora VALUES( @x, '" & Err.Number & "', '" & errMessage & "','frmCompraProducto','" & Date.Now & "')"
+            BitacoraComando.ExecuteNonQuery()
+            conexionBitacora = cerrarBitacora()
 
             Try
                 transaction.Rollback()
             Catch ex2 As Exception
 
                 MsgBox("Error Rollback")
+                conexionBitacora = cerrarBitacora()
+                conexionBitacora.open()
+                errMessage = quitarComillas(ex2.Message)
+                BitacoraComando.CommandText = "declare @x integer; set @x = (select count(*) from Bitacora) +1;INSERT INTO Bitacora VALUES( @x, '" & Err.Number & "', '" & errMessage & "','frmCompraProducto','" & Date.Now & "')"
+                BitacoraComando.ExecuteNonQuery()
+                conexionBitacora = cerrarBitacora()
 
             End Try
         End Try

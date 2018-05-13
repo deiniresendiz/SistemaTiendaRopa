@@ -49,4 +49,10 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         campActi(True)
     End Sub
+
+    Private Sub frmCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet1.Categorias' Puede moverla o quitarla según sea necesario.
+        Me.CategoriasTableAdapter.Fill(Me.DataSet1.Categorias)
+
+    End Sub
 End Class

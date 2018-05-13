@@ -22,6 +22,7 @@ Partial Class frmProveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.textTelefono = New System.Windows.Forms.TextBox()
         Me.textCp = New System.Windows.Forms.TextBox()
         Me.textColonia = New System.Windows.Forms.TextBox()
@@ -41,7 +42,20 @@ Partial Class frmProveedores
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.DataSet1 = New SistemaVenta.DataSet1()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProveedoresTableAdapter = New SistemaVenta.DataSet1TableAdapters.ProveedoresTableAdapter()
+        Me.IdProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RFCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColoniaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CpDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textTelefono
@@ -196,7 +210,10 @@ Partial Class frmProveedores
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedorDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.RFCDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.CpDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProveedoresBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(9, 154)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -212,6 +229,76 @@ Partial Class frmProveedores
         Me.btnModificar.TabIndex = 51
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProveedoresBindingSource
+        '
+        Me.ProveedoresBindingSource.DataMember = "Proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.DataSet1
+        '
+        'ProveedoresTableAdapter
+        '
+        Me.ProveedoresTableAdapter.ClearBeforeFill = True
+        '
+        'IdProveedorDataGridViewTextBoxColumn
+        '
+        Me.IdProveedorDataGridViewTextBoxColumn.DataPropertyName = "IdProveedor"
+        Me.IdProveedorDataGridViewTextBoxColumn.HeaderText = "IdProveedor"
+        Me.IdProveedorDataGridViewTextBoxColumn.Name = "IdProveedorDataGridViewTextBoxColumn"
+        Me.IdProveedorDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RFCDataGridViewTextBoxColumn
+        '
+        Me.RFCDataGridViewTextBoxColumn.DataPropertyName = "RFC"
+        Me.RFCDataGridViewTextBoxColumn.HeaderText = "RFC"
+        Me.RFCDataGridViewTextBoxColumn.Name = "RFCDataGridViewTextBoxColumn"
+        Me.RFCDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CalleDataGridViewTextBoxColumn
+        '
+        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "Calle"
+        Me.CalleDataGridViewTextBoxColumn.HeaderText = "Calle"
+        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
+        Me.CalleDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ColoniaDataGridViewTextBoxColumn
+        '
+        Me.ColoniaDataGridViewTextBoxColumn.DataPropertyName = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.HeaderText = "Colonia"
+        Me.ColoniaDataGridViewTextBoxColumn.Name = "ColoniaDataGridViewTextBoxColumn"
+        Me.ColoniaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CpDataGridViewTextBoxColumn
+        '
+        Me.CpDataGridViewTextBoxColumn.DataPropertyName = "Cp"
+        Me.CpDataGridViewTextBoxColumn.HeaderText = "Cp"
+        Me.CpDataGridViewTextBoxColumn.Name = "CpDataGridViewTextBoxColumn"
+        Me.CpDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TelefonoDataGridViewTextBoxColumn
+        '
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
+        Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmProveedores
         '
@@ -240,6 +327,8 @@ Partial Class frmProveedores
         Me.Name = "frmProveedores"
         Me.Text = "Proveedores"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,4 +353,15 @@ Partial Class frmProveedores
     Friend WithEvents btnNuevo As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnModificar As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents ProveedoresBindingSource As BindingSource
+    Friend WithEvents ProveedoresTableAdapter As DataSet1TableAdapters.ProveedoresTableAdapter
+    Friend WithEvents IdProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RFCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CalleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ColoniaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CpDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

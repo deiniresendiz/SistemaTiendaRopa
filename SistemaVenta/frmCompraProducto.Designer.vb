@@ -457,31 +457,37 @@ Partial Class frmCompraProducto
         '
         Me.IdProveedorp.HeaderText = "IdProveedor"
         Me.IdProveedorp.Name = "IdProveedorp"
+        Me.IdProveedorp.ReadOnly = True
         '
         'NombreP
         '
         Me.NombreP.HeaderText = "Nombre"
         Me.NombreP.Name = "NombreP"
+        Me.NombreP.ReadOnly = True
         '
         'RFC
         '
         Me.RFC.HeaderText = "RFC"
         Me.RFC.Name = "RFC"
+        Me.RFC.ReadOnly = True
         '
         'Calle
         '
         Me.Calle.HeaderText = "Calle"
         Me.Calle.Name = "Calle"
+        Me.Calle.ReadOnly = True
         '
         'Colonia
         '
         Me.Colonia.HeaderText = "Colonia"
         Me.Colonia.Name = "Colonia"
+        Me.Colonia.ReadOnly = True
         '
         'Telefono
         '
         Me.Telefono.HeaderText = "Telefono"
         Me.Telefono.Name = "Telefono"
+        Me.Telefono.ReadOnly = True
         '
         'btnAceptar
         '
@@ -881,7 +887,6 @@ Partial Class frmCompraProducto
         '
         Me.textIdCompraC.Location = New System.Drawing.Point(120, 8)
         Me.textIdCompraC.Name = "textIdCompraC"
-        Me.textIdCompraC.ReadOnly = True
         Me.textIdCompraC.Size = New System.Drawing.Size(121, 20)
         Me.textIdCompraC.TabIndex = 37
         '

@@ -27,7 +27,7 @@ Partial Class FechaEstado
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.drpFechaDesde = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.comEstado = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -51,7 +51,7 @@ Partial Class FechaEstado
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(102, 143)
+        Me.Button1.Location = New System.Drawing.Point(122, 132)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 34)
         Me.Button1.TabIndex = 7
@@ -75,13 +75,13 @@ Partial Class FechaEstado
         Me.drpFechaDesde.Size = New System.Drawing.Size(200, 20)
         Me.drpFechaDesde.TabIndex = 5
         '
-        'ComboBox1
+        'comEstado
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(122, 13)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 21)
-        Me.ComboBox1.TabIndex = 10
+        Me.comEstado.FormattingEnabled = True
+        Me.comEstado.Location = New System.Drawing.Point(122, 13)
+        Me.comEstado.Name = "comEstado"
+        Me.comEstado.Size = New System.Drawing.Size(200, 21)
+        Me.comEstado.TabIndex = 10
         '
         'Label3
         '
@@ -99,7 +99,7 @@ Partial Class FechaEstado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(353, 178)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.comEstado)
         Me.Controls.Add(Me.drpFechaHasta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
@@ -117,6 +117,6 @@ Partial Class FechaEstado
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents drpFechaDesde As DateTimePicker
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents comEstado As ComboBox
     Friend WithEvents Label3 As Label
 End Class

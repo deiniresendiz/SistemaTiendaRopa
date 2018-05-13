@@ -10,6 +10,12 @@
         btnNuevo.Enabled = Not ban
         btnModificar.Enabled = Not ban
     End Sub
+
+    Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSet1.Clientes' Puede moverla o quitarla según sea necesario.
+        Me.ClientesTableAdapter.Fill(Me.DataSet1.Clientes)
+
+    End Sub
     'Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     '    'TODO: esta línea de código carga datos en la tabla 'TiendaRopaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
     '    Me.ClientesTableAdapter.Fill(Me.TiendaRopaDataSet.Clientes)

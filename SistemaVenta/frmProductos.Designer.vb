@@ -22,6 +22,7 @@ Partial Class frmProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.textMinimo = New System.Windows.Forms.TextBox()
         Me.textMaximo = New System.Windows.Forms.TextBox()
         Me.textExistencia = New System.Windows.Forms.TextBox()
@@ -49,7 +50,24 @@ Partial Class frmProductos
         Me.textPrecio = New System.Windows.Forms.TextBox()
         Me.DataFecha = New System.Windows.Forms.DateTimePicker()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.DataSet1 = New SistemaVenta.DataSet1()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosTableAdapter = New SistemaVenta.DataSet1TableAdapters.ProductosTableAdapter()
+        Me.IdProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TallaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExistenciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExistenciaApartadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaximoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MinimoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CostoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UltFecCompraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textMinimo
@@ -204,7 +222,10 @@ Partial Class frmProductos
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProductoDataGridViewTextBoxColumn, Me.IdCategoriaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.TallaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.ExistenciaApartadoDataGridViewTextBoxColumn, Me.MaximoDataGridViewTextBoxColumn, Me.MinimoDataGridViewTextBoxColumn, Me.CostoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.UltFecCompraDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProductosBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(13, 231)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -223,6 +244,7 @@ Partial Class frmProductos
         '
         'comCategoria
         '
+        Me.comCategoria.DisplayMember = "IdCategoria"
         Me.comCategoria.FormattingEnabled = True
         Me.comCategoria.Location = New System.Drawing.Point(124, 53)
         Me.comCategoria.Name = "comCategoria"
@@ -292,6 +314,104 @@ Partial Class frmProductos
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "Productos"
+        Me.ProductosBindingSource.DataSource = Me.DataSet1
+        '
+        'ProductosTableAdapter
+        '
+        Me.ProductosTableAdapter.ClearBeforeFill = True
+        '
+        'IdProductoDataGridViewTextBoxColumn
+        '
+        Me.IdProductoDataGridViewTextBoxColumn.DataPropertyName = "IdProducto"
+        Me.IdProductoDataGridViewTextBoxColumn.HeaderText = "IdProducto"
+        Me.IdProductoDataGridViewTextBoxColumn.Name = "IdProductoDataGridViewTextBoxColumn"
+        Me.IdProductoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdCategoriaDataGridViewTextBoxColumn
+        '
+        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
+        Me.IdCategoriaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TallaDataGridViewTextBoxColumn
+        '
+        Me.TallaDataGridViewTextBoxColumn.DataPropertyName = "Talla"
+        Me.TallaDataGridViewTextBoxColumn.HeaderText = "Talla"
+        Me.TallaDataGridViewTextBoxColumn.Name = "TallaDataGridViewTextBoxColumn"
+        Me.TallaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ExistenciaDataGridViewTextBoxColumn
+        '
+        Me.ExistenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia"
+        Me.ExistenciaDataGridViewTextBoxColumn.HeaderText = "Existencia"
+        Me.ExistenciaDataGridViewTextBoxColumn.Name = "ExistenciaDataGridViewTextBoxColumn"
+        Me.ExistenciaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ExistenciaApartadoDataGridViewTextBoxColumn
+        '
+        Me.ExistenciaApartadoDataGridViewTextBoxColumn.DataPropertyName = "ExistenciaApartado"
+        Me.ExistenciaApartadoDataGridViewTextBoxColumn.HeaderText = "ExistenciaApartado"
+        Me.ExistenciaApartadoDataGridViewTextBoxColumn.Name = "ExistenciaApartadoDataGridViewTextBoxColumn"
+        Me.ExistenciaApartadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MaximoDataGridViewTextBoxColumn
+        '
+        Me.MaximoDataGridViewTextBoxColumn.DataPropertyName = "Maximo"
+        Me.MaximoDataGridViewTextBoxColumn.HeaderText = "Maximo"
+        Me.MaximoDataGridViewTextBoxColumn.Name = "MaximoDataGridViewTextBoxColumn"
+        Me.MaximoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MinimoDataGridViewTextBoxColumn
+        '
+        Me.MinimoDataGridViewTextBoxColumn.DataPropertyName = "Minimo"
+        Me.MinimoDataGridViewTextBoxColumn.HeaderText = "Minimo"
+        Me.MinimoDataGridViewTextBoxColumn.Name = "MinimoDataGridViewTextBoxColumn"
+        Me.MinimoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CostoDataGridViewTextBoxColumn
+        '
+        Me.CostoDataGridViewTextBoxColumn.DataPropertyName = "Costo"
+        Me.CostoDataGridViewTextBoxColumn.HeaderText = "Costo"
+        Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
+        Me.CostoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UltFecCompraDataGridViewTextBoxColumn
+        '
+        Me.UltFecCompraDataGridViewTextBoxColumn.DataPropertyName = "UltFecCompra"
+        Me.UltFecCompraDataGridViewTextBoxColumn.HeaderText = "UltFecCompra"
+        Me.UltFecCompraDataGridViewTextBoxColumn.Name = "UltFecCompraDataGridViewTextBoxColumn"
+        Me.UltFecCompraDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'frmProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,6 +447,8 @@ Partial Class frmProductos
         Me.Name = "frmProductos"
         Me.Text = "Productos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,4 +481,19 @@ Partial Class frmProductos
     Friend WithEvents textPrecio As TextBox
     Friend WithEvents DataFecha As DateTimePicker
     Friend WithEvents btnModificar As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents ProductosBindingSource As BindingSource
+    Friend WithEvents ProductosTableAdapter As DataSet1TableAdapters.ProductosTableAdapter
+    Friend WithEvents IdProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdCategoriaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TallaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExistenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExistenciaApartadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MaximoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MinimoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CostoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UltFecCompraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

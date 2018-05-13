@@ -22,6 +22,7 @@ Partial Class frmCategorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.textDescripcion = New System.Windows.Forms.TextBox()
         Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -33,7 +34,15 @@ Partial Class frmCategorias
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.dgDatos = New System.Windows.Forms.DataGridView()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.DataSet1 = New SistemaVenta.DataSet1()
+        Me.CategoriasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriasTableAdapter = New SistemaVenta.DataSet1TableAdapters.CategoriasTableAdapter()
+        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textDescripcion
@@ -121,7 +130,10 @@ Partial Class frmCategorias
         '
         'dgDatos
         '
+        Me.dgDatos.AutoGenerateColumns = False
         Me.dgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgDatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCategoriaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
+        Me.dgDatos.DataSource = Me.CategoriasBindingSource
         Me.dgDatos.Location = New System.Drawing.Point(17, 159)
         Me.dgDatos.Name = "dgDatos"
         Me.dgDatos.Size = New System.Drawing.Size(557, 221)
@@ -136,6 +148,38 @@ Partial Class frmCategorias
         Me.btnModificar.TabIndex = 50
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CategoriasBindingSource
+        '
+        Me.CategoriasBindingSource.DataMember = "Categorias"
+        Me.CategoriasBindingSource.DataSource = Me.DataSet1
+        '
+        'CategoriasTableAdapter
+        '
+        Me.CategoriasTableAdapter.ClearBeforeFill = True
+        '
+        'IdCategoriaDataGridViewTextBoxColumn
+        '
+        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
         '
         'frmCategorias
         '
@@ -156,6 +200,8 @@ Partial Class frmCategorias
         Me.Name = "frmCategorias"
         Me.Text = "Categorias"
         CType(Me.dgDatos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -172,4 +218,10 @@ Partial Class frmCategorias
     Friend WithEvents btnNuevo As Button
     Friend WithEvents dgDatos As DataGridView
     Friend WithEvents btnModificar As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents CategoriasBindingSource As BindingSource
+    Friend WithEvents CategoriasTableAdapter As DataSet1TableAdapters.CategoriasTableAdapter
+    Friend WithEvents IdCategoriaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
