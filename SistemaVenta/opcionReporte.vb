@@ -25,13 +25,13 @@ Module opcionReporte
 
     Public Function openConnection()
         Dim conexionsql As SqlConnection
-        conexionsql = New SqlConnection(ConfigurationManager.ConnectionStrings("Conexion").ConnectionString)
+        conexionsql = New SqlConnection("Data Source=DESKTOP-NC9ERBN;Initial Catalog=SistemaRopa; Integrated Security='True';")
 
         Return conexionsql
     End Function
     Public Function cerrarConexion()
         Dim conexionsql As SqlConnection
-        conexionsql = New SqlConnection(ConfigurationManager.ConnectionStrings("Conexion").ConnectionString)
+        conexionsql = New SqlConnection("Data Source=DESKTOP-NC9ERBN;Initial Catalog=SistemaRopa; Integrated Security='True';")
 
         conexionsql.Close()
 
@@ -71,4 +71,17 @@ Module opcionReporte
         Return message
     End Function
     Public moduloUsuario As String
+    Public Function OpenHistorico()
+        Dim conexionBitacora As New SqlConnection("Data Source =DESKTOP-NC9ERBN; initial catalog='hSistemaRopa'; Integrated Security = True")
+
+        Return conexionBitacora
+    End Function
+
+    Public Function cerrarHistorico()
+        Dim conexionBitacora As New SqlConnection("Data Source = DESKTOP-NC9ERBN; initial catalog='SistemaRopa'; Integrated Security = True")
+
+        conexionBitacora.Close()
+
+        Return conexionBitacora
+    End Function
 End Module

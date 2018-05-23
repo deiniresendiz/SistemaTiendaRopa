@@ -215,4 +215,8 @@ Public Class frmMain
     Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
         frmBitacora.ShowDialog()
     End Sub
+
+    Private Sub HisttoriscoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisttoriscoToolStripMenuItem.Click
+        FechaHistorico.ShowDialog()
+    End Sub
 End Class

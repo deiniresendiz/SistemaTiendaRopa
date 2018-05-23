@@ -58,9 +58,10 @@ Partial Class frmMain
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RespaldoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RestaurarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HisttoriscoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -265,7 +266,7 @@ Partial Class frmMain
         '
         'UtilidadesToolStripMenuItem
         '
-        Me.UtilidadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AyudaToolStripMenuItem, Me.RespaldoToolStripMenuItem, Me.RestaurarToolStripMenuItem, Me.BitacoraToolStripMenuItem})
+        Me.UtilidadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AyudaToolStripMenuItem, Me.RespaldoToolStripMenuItem, Me.RestaurarToolStripMenuItem, Me.BitacoraToolStripMenuItem, Me.HisttoriscoToolStripMenuItem})
         Me.UtilidadesToolStripMenuItem.Name = "UtilidadesToolStripMenuItem"
         Me.UtilidadesToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.UtilidadesToolStripMenuItem.Text = "Utilidades"
@@ -288,15 +289,21 @@ Partial Class frmMain
         Me.RestaurarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RestaurarToolStripMenuItem.Text = "Restaurar"
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'BitacoraToolStripMenuItem
         '
         Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
         Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BitacoraToolStripMenuItem.Text = "Bitacora"
+        '
+        'HisttoriscoToolStripMenuItem
+        '
+        Me.HisttoriscoToolStripMenuItem.Name = "HisttoriscoToolStripMenuItem"
+        Me.HisttoriscoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HisttoriscoToolStripMenuItem.Text = "Historico"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'frmMain
         '
@@ -355,4 +362,5 @@ Partial Class frmMain
     Friend WithEvents RestaurarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents BitacoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HisttoriscoToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -119,6 +119,12 @@
     <Compile Include="FechaEstado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FechaHistorico.Designer.vb">
+      <DependentUpon>FechaHistorico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FechaHistorico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmApartado.Designer.vb">
       <DependentUpon>frmApartado.vb</DependentUpon>
     </Compile>
@@ -259,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FechaEstado.resx">
       <DependentUpon>FechaEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FechaHistorico.resx">
+      <DependentUpon>FechaHistorico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmApartado.resx">
       <DependentUpon>frmApartado.vb</DependentUpon>

@@ -133,3 +133,4 @@ C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\obj\Deb
 C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\obj\Debug\SistemaVenta.frmProductosReportes.resources
 C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\obj\Debug\SistemaVenta.FechaEstado.resources
 C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\obj\Debug\SistemaVenta.frmBitacora.resources
+C:\Users\NETXBAX\Google Drive\SystemaRopa\SistemaTiendaRopa\SistemaVenta\obj\Debug\SistemaVenta.FechaHistorico.resources
